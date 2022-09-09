@@ -2,21 +2,85 @@
     box-sizing: border-box;    
     margin: 0px;
     border: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 .container {    
     display: grid;    
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, max(192px, 20%));
+    grid-template-rows: repeat(5, max(108px, 20%));
     width: 100vw;
     height: 100vh;    
 }
-    .grid-item {
-        
-    }
+    .subgrid-item {
+        border: 1px solid black;
+    }    
     .dashboard {
         grid-row: 1 / 6;
-        background-color: #444;
+        background-color: rgb(109, 106, 106);                
     }
+        .navigation {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(13, 1fr);
+            width: 100vw;
+        }
+            .nav-title {
+                display: flex;
+                flex-direction: row;
+                line-height: 48px;
+                padding-left: 10px;                                                          
+            }
+                .title-text {
+                    font-size: clamp(100%, 1.5vw, 200%);
+                    font-weight: bolder;
+                    padding-left: 10px;
+                }
+                .nav-text {
+                    padding-left: 10px;
+                    
+                }
+                .nav-text:hover {
+                    cursor: pointer;
+                    color: white;
+                    padding-left: 30px;
+                    transition: 200ms;
+                }
+            .nav-item {
+                display: flex;
+                flex-direction: row;
+                line-height: 24px;
+                padding-left: 20px;                              
+            }
+            .nav-item:hover {
+                
+            }
+             #home {
+                grid-row: 3;
+             }
+             #profile {
+                grid-row: 4;
+             }
+             #message {
+                grid-row: 5;
+             }
+             #history {
+                grid-row: 6;
+             }
+             #tasks {
+                grid-row: 7;
+             }
+             #communities {
+                grid-row: 8;
+             }
+             #settings {
+                grid-row: 11;
+             }
+             #support {
+                grid-row: 12;
+             }
+             #privacy {
+                grid-row: 13;
+             }
     .navbar {
         grid-column: 2 / 6;
         background-color: darkgrey;
